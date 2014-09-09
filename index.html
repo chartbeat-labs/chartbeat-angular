@@ -1,0 +1,177 @@
+<!doctype html>
+<html class="no-js" ng-app="cbDemo">
+  <head>
+    <meta charset="utf-8">
+    <title>Chartbeat Angular</title>
+    <meta name="description" content="Chartbeat Angular open source components.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="styles/vendor.css">
+
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body ng-controller="MainCtrl">
+    <div class="page-container">
+      <header>
+        <a href="https://github.com/chartbeat-labs/chartbeat-angular">
+          <div class="logo" ng-include="'views/logo.html'"></div>
+        </a>
+      </header>
+
+      <section class="type-container">
+        <h1 class="type-title">Components</h1>
+
+        <div class="type-example">
+          <h2 class="type-name">cbAnimatedLabel</h2>
+          <pre class="type-example-input" ng-non-bindable>
+            &lt;cb-animated-label class="large" target="{{number}}"&gt;&lt;/cb-animated-label&gt;
+          </pre>
+
+          <pre class="type-example-output type-example_whitespace_normal">
+            <cb-animated-label class="large" target="{{number}}"></cb-animated-label>
+          </pre>
+        </div>
+      </section>
+
+      <section class="type-container">
+        <h1 class="type-title">Filters</h1>
+
+        <div class="type-example">
+          <h2 class="type-name">formatText</h2>
+
+          <div class="type-container-inner">
+            <h3 class="type-name-part">title</h3>
+            <pre class="type-example-input" ng-non-bindable>
+              {{'hello world' | formatText:'title'}}
+            </pre>
+            <pre class="type-example-output">
+              {{'hello world' | formatText:'title'}}
+            </pre>
+          </div>
+
+          <div class="type-container-inner">
+            <h3 class="type-name-part">csv</h3>
+            <pre class="type-example-input" ng-non-bindable>
+              {{['abba', 'dabba', 'cabba'] | formatText:'csv'}}
+            </pre>
+            <pre class="type-example-output">
+              {{['abba', 'dabba', 'cabba'] | formatText:'csv'}}
+            </pre>
+          </div>
+
+          <div class="type-container-inner">
+            <h3 class="type-name-part">capitalize</h3>
+            <pre class="type-example-input" ng-non-bindable>
+              {{'hello world' | formatText:'capitalize'}}
+            </pre>
+            <pre class="type-example-output">
+              {{'hello world' | formatText:'capitalize'}}
+            </pre>
+          </div>
+
+          <div class="type-container-inner">
+            <h3 class="type-name-part">defaultValue</h3>
+            <pre class="type-example-input" ng-non-bindable>
+              {{'' | formatText:'defaultValue':'Oh snap!'}}
+            </pre>
+            <pre class="type-example-output">
+              {{'' | formatText:'defaultValue':'Oh snap!'}}
+            </pre>
+          </div>
+        </div>
+
+        <div class="type-example">
+          <h2 class="type-name">formatNumber</h2>
+
+          <div class="type-container-inner">
+            <h3 class="type-name-part">seconds</h3>
+            <pre class="type-example-input" ng-non-bindable>
+              {{1234 | formatNumber:'seconds'}}
+            </pre>
+            <pre class="type-example-output">
+              {{1234 | formatNumber:'seconds'}}
+            </pre>
+          </div>
+
+          <div class="type-container-inner">
+            <h3 class="type-name-part">fixed</h3>
+            <pre class="type-example-input" ng-non-bindable>
+              {{1234 | formatNumber:'fixed'}}
+            </pre>
+            <pre class="type-example-output">
+              {{1234 | formatNumber:'fixed'}}
+            </pre>
+          </div>
+
+          <div class="type-container-inner">
+            <h3 class="type-name-part">time</h3>
+            <pre class="type-example-input" ng-non-bindable>
+              {{600 | formatNumber:'time'}}
+            </pre>
+            <pre class="type-example-output">
+              {{600 | formatNumber:'time'}}
+            </pre>
+          </div>
+
+          <div class="type-container-inner">
+            <h3 class="type-name-part">time_en</h3>
+            <pre class="type-example-input" ng-non-bindable>
+              {{654321 | formatNumber:'time_en'}}
+            </pre>
+            <pre class="type-example-output">
+              {{654321 | formatNumber:'time_en'}}
+            </pre>
+          </div>
+
+          <div class="type-container-inner">
+            <h3 class="type-name-part">time_in_days</h3>
+            <pre class="type-example-input" ng-non-bindable>
+              {{654321 | formatNumber:'time_in_days'}}
+            </pre>
+            <pre class="type-example-output">
+              {{654321 | formatNumber:'time_in_days'}}
+            </pre>
+          </div>
+
+          <div class="type-container-inner">
+            <h3 class="type-name-part">number_abbrev</h3>
+            <pre class="type-example-input" ng-non-bindable>
+              {{654321 | formatNumber:'number_abbrev'}}
+            </pre>
+            <pre class="type-example-output">
+              {{654321 | formatNumber:'number_abbrev'}}
+            </pre>
+          </div>
+
+          <div class="type-container-inner">
+            <h3 class="type-name-part">round_with_abbrev</h3>
+            <pre class="type-example-input" ng-non-bindable>
+              {{654321 | formatNumber:'round_with_abbrev'}}
+            </pre>
+            <pre class="type-example-output">
+              {{654321 | formatNumber:'round_with_abbrev'}}
+            </pre>
+          </div>
+
+          <div class="type-container-inner">
+            <h3 class="type-name-part">percent</h3>
+            <pre class="type-example-input" ng-non-bindable>
+              {{0.05 | formatNumber:'percent'}}
+            </pre>
+            <pre class="type-example-output">
+              {{0.05 | formatNumber:'percent'}}
+            </pre>
+          </div>
+        </div>
+      </section>
+
+
+    </div>
+
+    <a href="https://github.com/chartbeat-labs/chartbeat-angular"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+
+    <script src="scripts/vendor.js"></script>
+
+    <script src="scripts/app.js"></script>
+  </body>
+</html>
