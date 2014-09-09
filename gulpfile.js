@@ -192,3 +192,22 @@ gulp.task('test:unit', function() {
  * Meta task to run all tests.
  */
 gulp.task('test', ['test:unit']);
+
+/**
+ * Deploy's website to gh-pages.
+ */
+gulp.task('website:build', function(done) {
+  var exec = require('child_process').exec;
+  exec('gulp build', {
+    cwd: path.join(__dirname, 'website')
+  }, done);
+});
+
+/**
+ * Deploy's website to gh-pages.
+ */
+gulp.task('website:deploy', ['website:build'], function() {
+  return gulp.src('website/dist')
+    .pipe($.subtree())
+    .pipe($.clean());
+});

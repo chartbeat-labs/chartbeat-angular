@@ -135,9 +135,3 @@ gulp.task('watch', ['connect', 'serve'], function () {
     gulp.watch('app/images/**/*', ['images']);
     gulp.watch('bower.json', ['wiredep']);
 });
-
-gulp.task('deploy', ['build'], function () {
-    return gulp.src('dist')
-        .pipe($.subtree())
-        .pipe($.clean());
-});
