@@ -7,6 +7,11 @@ This is a collection of AngularJS code that we've built in-house and wanted to s
 Pull requests welcome!
 
 
+## Demo
+
+[Check the website for demo of components.](http://chartbeat-labs.github.io/chartbeat-angular/)
+
+
 ## Quick start
 
 Include the required libraries:
