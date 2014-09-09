@@ -1,0 +1,14 @@
+{
+  "name": "chatbeat-angular-gh-pages",
+  "private": false,
+  "dependencies": {
+    "chartbeat-angular": "0.1.0",
+    "angular": "1.2.23",
+    "angular-animate": "1.2.23",
+    "angular-sanitize": "1.2.23"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.2.23",
+    "less.js": "1.7.4"
+  }
+}

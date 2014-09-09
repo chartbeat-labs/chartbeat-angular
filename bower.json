@@ -6,7 +6,9 @@
     "dist/chartbeat-angular.css",
     "dist/chartbeat-angular.js"
   ],
-  "ignore": [],
+  "ignore": [
+    "website"
+  ],
   "keywords": [
     "chartbeat",
     "angular",

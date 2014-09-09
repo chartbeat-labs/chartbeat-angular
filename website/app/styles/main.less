@@ -1,0 +1,77 @@
+@color-background: #1f3543;
+@color-container-background: #ECF4F8;
+@color-container-border: #446271;
+@color-text: #35648b;
+@spacing-container: 20px;
+
+body {
+  background: @color-background;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: @color-text;
+}
+
+.page-container {
+  margin: 0 auto;
+  width: 600px;
+}
+
+.logo {
+  display: inline-block;
+  vertical-align: middle;
+  color: @color-container-background;
+  margin: 20px 0;
+}
+
+.logo-text {
+  line-height: 1;
+  letter-spacing: -1px;
+  font-weight: 500;
+}
+
+.type-container {
+  margin: @spacing-container 0;
+  padding: @spacing-container;
+  background: @color-container-background;
+  border: 1px solid #1d2227;
+  border-radius: 5px;
+}
+
+.type-container-inner {
+}
+
+.type-title {
+  margin-top: 0;
+}
+
+.type-name {
+  font-size: 20px;
+}
+
+.type-name-part {
+  font-size: 16px;
+}
+
+.type-example {
+  border-top: 1px solid @color-container-border;
+  width: 100%;
+  position: relative;
+  left: -@spacing-container;
+  padding: 0 @spacing-container;
+}
+
+.type-example-input,
+.type-example-output {
+  white-space: pre-line;
+}
+
+.type-example-input:before {
+  content: 'input:';
+}
+
+.type-example-output:before {
+  content: 'output:';
+}
+
+.type-example_whitespace_normal {
+  white-space: normal;
+}
