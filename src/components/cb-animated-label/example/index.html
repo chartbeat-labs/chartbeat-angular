@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="exampleApp">
+  <head>
+    <title>Example</title>
+    <meta charset="UTF-8"/>
+    <style>
+
+    </style>
+    <link rel="stylesheet/less" type="text/css" href="../cb-animated-label.less" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.6.3/less.min.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+    <script src="/cb-animated-label.js"></script>
+  </head>
+  <body ng-controller="ExampleCtrl">
+    <h1>Example</h1>
+    <cb-animated-label class="large" target="{{number}}"></cb-animated-label>
+
+    <script>
+    angular.module('exampleApp', ['cb.animatedLabel'])
+      .value('CB_OPTIONS', {
+        TEMPLATE_BASE_PATH: '../'
+      })
+      .controller('ExampleCtrl', function($scope, $interval) {
+        function getRandomArbitary(min, max) {
+          return (Math.random() * (max - min) + min).toFixed(3);
+        }
+        $scope.number = getRandomArbitary(0, 3);
+
+        $interval(function() {
+          $scope.number = getRandomArbitary(0, 3);
+        }, 3000);
+      });
+
+    </script>
+  </body>
+</html

@@ -1,0 +1,25 @@
+{
+  "name": "chartbeat-angular",
+  "description": "Chartbeat AngularJS components, directives, filters, and services.",
+  "version": "0.1.0",
+  "main": [
+    "dist/chartbeat-angular.css",
+    "dist/chartbeat-angular.js"
+  ],
+  "ignore": [],
+  "keywords": [
+    "chartbeat",
+    "angular",
+    "angularjs"
+  ],
+  "homepage": "https://www.chartbeat.com",
+  "dependencies": {
+    "angular": "1.2.23",
+    "angular-animate": "1.2.23",
+    "angular-sanitize": "1.2.23"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.2.23",
+    "less.js": "1.7.4"
+  }
+}
