@@ -49,6 +49,9 @@ angular.module('cb.filters.formatNumber', [
         var factor = arguments[2];
         return $filter('number')(Math.round(input / factor) * factor);
 
+      case 'floor':
+        return Math.floor(input);
+
         /**
          * Formats seconds from integer to string, e.g. 105083 to 105,083s
          */
