@@ -235,6 +235,31 @@ angular.module('cb.filters.formatNumber', [
         fixedNumber = angular.isDefined(arguments[2]) ? arguments[2] : 0;
         return (input * 100).toFixed(fixedNumber) + '%';
 
+
+        /**
+         * Outputs number padded with leading zeros to the specified length,
+         * if necessary. If number is already the specified length or longer,
+         * just returns the number.
+         *
+         * @example
+         *     1 | formatNumber:'pad'    --> 1
+         *     1 | formatNumber:'pad': 3 --> 001
+         *     1 | formatNumber:'pad': 5 --> 00001
+         * 10000 | formatNumber:'pad': 3 --> 10000
+         *
+         * Note: always converts to a string.
+         */
+        case 'pad':
+          fixedNumber = angular.isDefined(arguments[2]) ? arguments[2] : 0;
+          input = input + '';
+          if (input.length >= fixedNumber) {
+            return input;
+          }
+          while (input.length < fixedNumber) {
+            input = '0' + input;
+          }
+          return input;
+
       default:
         return input;
       }
