@@ -63,4 +63,15 @@ describe('Filter: formatNumber', function() {
       // expect(formatNumber(24*60*60, 'time_en')).toEqual('1 day'); // need to fix
     });
   });
+  describe('percentWithAbbrev', function() {
+    it('should return number as a string with percent sign with specified number of decimal places.', function(){
+      expect(formatNumber(0.01356, 'percentWithAbbrev', 3)).toEqual('1.356%');
+      expect(formatNumber(0.0005, 'percentWithAbbrev', 1)).toEqual('0.1%');
+
+    });
+    it('should return the string <0.XXX1% for any number which rounds to 0 at specified precision.', function(){
+      expect(formatNumber(0.00004321, 'percentWithAbbrev', 2)).toEqual('<0.01%');
+      expect(formatNumber(0.0004, 'percentWithAbbrev', 1)).toEqual('<0.1%');
+    });
+  });
 });
