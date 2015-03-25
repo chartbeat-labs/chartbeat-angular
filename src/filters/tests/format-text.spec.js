@@ -83,4 +83,17 @@ describe('Filter: formatText', function() {
     });
   });
 
+  describe('alphanumeric', function() {
+    it('should return an empty string if input is non-string', function() {
+      expect(formatText(null, 'alphanumeric')).toEqual('');
+      expect(formatText(9, 'alphanumeric')).toEqual('');
+      expect(formatText(['hi', 'there'], 'alphanumeric')).toEqual('');
+    });
+
+    it('should return a string which has removed all non-alphanumeric characters.', function() {
+      expect(formatText('ab*()(#!"C123~9-A', 'alphanumeric')).toEqual('abC1239A');
+    });
+
+  });
+
 });

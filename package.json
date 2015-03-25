@@ -1,7 +1,7 @@
 {
   "name": "chartbeat-angular",
   "description": "Chartbeat AngularJS components, directives, filters, and services.",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "keywords": [
     "chartbeat",
     "angular",

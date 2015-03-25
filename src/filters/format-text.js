@@ -19,6 +19,16 @@ angular.module('cb.filters.formatText', [
       }
 
       switch (type) {
+        // Removes all non-alphanumeric characters from text
+        // Returns empty string for non-string entries.
+        case 'alphanumeric':
+          if (!angular.isString(input)){
+            return '';
+          } else {
+            return input.replace(/[^a-zA-Z0-9]/g, '');
+          }
+          break;
+
         // Turns a string into title case.
         // Note: Title case was taken from here:
         // https://github.com/gouch/to-title-case/blob/master/to-title-case.js
