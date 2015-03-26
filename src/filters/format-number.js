@@ -236,20 +236,37 @@ angular.module('cb.filters.formatNumber', [
         return (input * 100).toFixed(fixedNumber) + '%';
 
       case 'percentWithAbbrev':
-        //returns input as a percentage, assuming input is a decimal representation.
-        //if 0 then it will return <.01% to same precision as is requested
-        //eg:  formatNumber(.1, 'percentWithAbbrev', 0) returns '10%'
-        //     formatNumber(.0004, 'percentWithAbbrev', 1) returns '<.1%'
+        // Returns input as a percentage, assuming input is a decimal representation.
+        // If 0 then it will return <.01% to same precision as is requested
+        // i.e.:  formatNumber(.1, 'percentWithAbbrev', 0) returns '10%'
+        //      formatNumber(.0004, 'percentWithAbbrev', 1) returns '<.1%'
         fixedNumber = angular.isDefined(arguments[2]) ? arguments[2] : 0;
         var returnVal = (input * 100).toFixed(fixedNumber);
+
         if (fixedNumber > 0 && returnVal === (0).toFixed(fixedNumber)) {
           returnVal = '<0.';
-          while(returnVal.length < fixedNumber + 2){
+
+          while (returnVal.length < fixedNumber + 2) {
             returnVal = returnVal + '0';
           }
           returnVal += 1;
         }
+
         return returnVal + '%';
+
+        /**
+         * Returns the number passed through the standard Angular number filter
+         * or the string N/A for null values.
+         */
+        case 'numberOrNA':
+          if (typeof input === 'undefined' || input === null) {
+            return 'N/A';
+          } else if (input === '') {
+            return '';
+          } else {
+            return $filter('number')(input, arguments[2]);
+          }
+          break;
 
         /**
          * Outputs number padded with leading zeros to the specified length,
